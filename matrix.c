@@ -4,8 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DATA_SIZE 1024 // let's count the primes among the first 1024 numbers
-#define SIZE 3
+#define SIZE 100
 
 
 int readmatrixByRows(int rows, int cols, int (*a), const char* filename)
@@ -56,8 +55,7 @@ int readmatrixByCols(int rows, int cols, int (*a), const char* filename)
 
 
 int main(int argc, char *argv[]) {
-  int first[DATA_SIZE], second[DATA_SIZE];
-  int send[DATA_SIZE], recv[DATA_SIZE];
+  int send[SIZE * SIZE * 2], recv[SIZE * SIZE * 2];
   int rank, size, count, root, res[SIZE], i, j;
   int rows_count, cols_count;
   MPI_Status status;
